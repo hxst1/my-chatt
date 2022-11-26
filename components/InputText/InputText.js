@@ -10,6 +10,9 @@ const Input = styled.input`
   width: 400px;
   font-size: 17px;
   padding-left: 10px;
+  @media (max-width: 600px) {
+    width: 90vw;
+  }
 `
 const Label = styled.label`
   font-size: 17px;

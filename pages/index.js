@@ -24,7 +24,7 @@ const Home = () => {
   const [chat, setChat] = useState([]);  
 
   useEffect(() => {
-    
+
     socket.on('connect', () => {
       debug(`g/socket connected! ${socket.id}`)
       setConnected(true)
