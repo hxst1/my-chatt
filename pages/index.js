@@ -16,12 +16,7 @@ const ContainerHome = styled.div`
 const user = "User_" + String(new Date().getTime());
 
 const Home = () => {
-  let socket = io(process.env.HOST, {
-    path: '/api/socket',
-    cors: {
-      origin: '*',
-    }
-  })
+  let socket = io(process.env.HOST)
 
   const [connected, setConnected] = useState(socket.connected);
   const [chat, setChat] = useState([]);  
