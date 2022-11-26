@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import Chat from "../components/Chat/Chat";
 
 const ContainerHome = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
