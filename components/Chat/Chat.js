@@ -6,6 +6,12 @@ const ContainerChat = styled.div`
   height: 60vh;
   font-size: 17px;
   overflow: scroll;
+  ::-webkit-scrollbar {
+      display: none;
+  }
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+
   @media (max-width: 600px) {
     height: 500px;
     width: 90vw;

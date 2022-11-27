@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 const Input = styled.input`
   background-color: #00000a;
