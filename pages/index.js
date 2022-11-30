@@ -1,9 +1,9 @@
 import InputText from "../components/InputText/InputText"
 import io from 'socket.io-client'
-import styled from '@emotion/styled'
 import debug from "../utils/debug";
 import { useEffect, useState } from "react"
 import Chat from "../components/Chat/Chat";
+import styled from "styled-components";
 
 const ContainerHome = styled.div`
   height: 100vh;

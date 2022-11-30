@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from "styled-components";
 import { useEffect, useRef } from 'react'
 import checkURL from '../../utils/checkURL';
 
