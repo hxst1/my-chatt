@@ -10,6 +10,15 @@ const socketio = async (req, res) => {
       path: '/api/socketio'
     })
     res.socket.server.io = io
+
+    io.on('connection', (socket) => {
+      let online = io.engine.clientsCount
+      io.emit('online', online)
+      socket.on('disconnect', () => {
+        let online = io.engine.clientsCount
+        io.emit('online', online)
+      })
+    });
   }
   res.end()
 }

@@ -23,8 +23,7 @@ const InputText = ({user, connected}) => {
     
 
     const handleChange = (e) => {
-      let capitalize = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)
-      setText(capitalize)
+      setText(e.target.value)
     }
 
     const handleSubmit = async (e) => {

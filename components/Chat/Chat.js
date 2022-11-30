@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { useEffect, useRef } from 'react'
+import checkURL from '../../utils/checkURL';
 
 const ContainerChat = styled.div`
   width: 400px;
@@ -34,7 +35,10 @@ const Chat = ({chat, user}) => {
             <span>
               {c.user === user ? "[Me]: " : "[User]: "}
             </span>
-              {c.text}
+              {checkURL(c.text)
+               ? <a target="_blank" rel="noreferrer" href={c.text.toLowerCase()}>{c.text.toLowerCase()}</a> 
+               : c.text
+               }
           </div>
         ))
       ) : (

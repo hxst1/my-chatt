@@ -11,6 +11,18 @@ const ContainerHome = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  & p {
+    display: flex
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    margin: 10px;
+    @media (max-width: 600px) {
+    width: 90vw;
+  }
+  }
 `
 
 const user = "User_" + String(new Date().getTime());
@@ -20,10 +32,9 @@ let socket = io(process.env.HOST, {
 })
 
 const Home = () => {
-
-
   const [connected, setConnected] = useState(socket.connected);
-  const [chat, setChat] = useState([]);  
+  const [chat, setChat] = useState([]);
+  const [onlineUsers, setOnlineUsers] = useState(0) 
 
   useEffect(() => {
 
@@ -42,11 +53,16 @@ const Home = () => {
       setChat([...chat]);
     });
 
+    socket.on('online', (usersOnline) => {
+      setOnlineUsers(usersOnline)
+    })
+
     if (socket) return () => socket.disconnect();
   }, [])
 
   return (
     <ContainerHome>
+      <p>Online users: {onlineUsers}</p>
       <Chat chat={chat} user={user}/>
       <InputText user={user} connected={connected}/>
     </ContainerHome>
